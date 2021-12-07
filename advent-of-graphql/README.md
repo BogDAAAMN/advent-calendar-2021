@@ -6,7 +6,7 @@
 
 **Project:** [`advent-of-graphql/`](./advent-of-graphql/)
 
-**Status:** ➡️ In progress (0/25) 
+**Status:** 07/25 
 
 ## Daily progress
 
@@ -50,5 +50,5 @@ Reference: https://dev.stepzen.com/docs/connecting-backends/manage-configuration
 ![StepZen Studio screenshot for Day 06](./day-06.png)
 
 ### Day 07: [Learn about custom directives](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=bf548c53162d4078ab6646433fdda7db)
-I learnt about graphql custom directives, and the `@rest` directive and the passing of its headers. 
+I learnt about graphql custom directives, and the `@rest` directive and the passing of its headers. Reference: https://stepzen.com/docs/design-a-graphql-schema/custom-graphql-directives
 
