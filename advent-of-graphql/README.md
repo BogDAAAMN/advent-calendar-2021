@@ -47,5 +47,8 @@ configurationset:
 Reference: https://dev.stepzen.com/docs/connecting-backends/manage-configuration-and-keys#environment-variables
 
 ### Day 06: [Use StepZen to view Unsplash with GraphiQL](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=e8264209ccb24dcd88cbc57e47999056)
+![StepZen Studio screenshot for Day 06](./day-06.png)
 
 ### Day 07: [Learn about custom directives](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=bf548c53162d4078ab6646433fdda7db)
+I learnt about graphql custom directives, and the `@rest` directive and the passing of its headers. 
+
