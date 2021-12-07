@@ -9,4 +9,4 @@ My collection of 2021's advent coding challenges.
 
 **Project:** [`advent-of-graphql/`](./advent-of-graphql/)
 
-**Status:** ➡️ In progress (0/25) 
+**Status:** 07/25
