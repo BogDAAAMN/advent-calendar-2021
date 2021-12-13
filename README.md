@@ -1,6 +1,16 @@
 # Advent Calendar 2021
 My collection of 2021's advent coding challenges.
 
+## Advent of Code
+
+**Website**: https://adventofcode.com
+
+**Description**: Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as a speed contest, interview prep, company training, university coursework, practice problems, or to challenge each other.
+
+**Project:** [`advent-of-code/`](./advent-of-code/)
+
+**Status:** 02/25
+
 ## Advent of GraphQL
 
 **Website**: https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980
