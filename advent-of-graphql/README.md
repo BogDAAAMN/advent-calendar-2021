@@ -60,3 +60,70 @@ I learnt about graphql custom directives, and the `@rest` directive and the pass
 
 ### Day 10: [Create async function](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=8803a22964e145d58565c346d64c7177)
 - [`0b1ad70a`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/0b1ad70a2221c81d1ed07d8a0ec00e31a574da37) Add async `getData()` function to the Next.js API
+
+### Day 11: [Create your fetch call](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=1d65d99ebcae46efbf83114eac198108)
+- [`6500c36`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/6500c36d7504b4a8d92b871901f891042b5bf2af) Add the StepZen API call in `getData()`
+  ```js
+  const stepzenResponse = await fetch(process.env.STEPZEN_API_URL, {
+    method: "POST",
+    headers: {
+      Authorization: `apikey ${process.env.STEPZEN_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: `query GetRandomPhoto {unsplash_Random_Photo {
+          urls {
+            full
+          }
+        }
+      }`,
+    }),
+  });
+
+  let data = await stepzenResponse.json();
+  return res.json({ data: data });
+  ```
+
+### Day 12: [SWR](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=1cef5bc615bb4484aa27ecd96d23fa8a)
+- [`d351780`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/d35178064e7f8f2bd06623dadd3341cac363dcdb) Install `swr`
+- [`d351780`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/d35178064e7f8f2bd06623dadd3341cac363dcdb) Add fetching function to `index.js`
+  ```js
+  const fetcher = async (url) => {
+    const res = await fetch(url);
+    const data = await res.json();
+    if (res.status !== 200) {
+      throw new Error(data.message);
+    }
+
+    return data;
+  };
+  ```
+- [`d351780`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/d35178064e7f8f2bd06623dadd3341cac363dcdb) Render components based on the `fetcher()` response
+  ```js
+  {error && <div>Error</div>}
+  {!data && <div>Loading...</div>}
+  {data && data.data.data.unsplash_Random_Photo.urls.full === null && <div>Null response</div>}
+  {
+    data && data.data.data.unsplash_Random_Photo.urls.full &&
+    <Image
+      loader={() => data.data.data.unsplash_Random_Photo.urls.full}
+      src={data.data.data.unsplash_Random_Photo.urls.full}
+      alt="snowflake"
+      width="100%"
+      height="100%"
+    />
+  }
+  ```
+
+### Day 13: [Using SWR's mutate functionality](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=8fb6b487e5ef4f92a7597125524abd78)
+- [`5ef6eed`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/5ef6eedf46f5e1b2cdf7aeebddc83a7bfffd6326) Add SWR mutation on button click
+  ```js
+  <button
+    className={styles.button}
+    onClick={() => {
+      mutate("/api/snowflake");
+    }}
+  >
+    Submit
+  </button>
+  ```
