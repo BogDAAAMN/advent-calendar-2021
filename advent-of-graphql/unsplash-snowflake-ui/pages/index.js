@@ -16,7 +16,7 @@ const fetcher = async (url) => {
 
 export default function Home() {
   const { data, error } = useSWR("/api/snowflake", fetcher);
-  
+
   return (
     <div className={styles.container}>
       <Head>
@@ -29,21 +29,27 @@ export default function Home() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <h2>Generate a random image of a snowflake &rarr;</h2>
-              {error && <div>Error</div>}
-              {!data && <div>Loading...</div>}
-              {data && data.data.data.unsplash_Random_Photo.urls.full === null && <div>Null response</div>}
-              {
-                data && data.data.data.unsplash_Random_Photo.urls.full &&
-                <Image
-                  loader={() => data.data.data.unsplash_Random_Photo.urls.full}
-                  src={data.data.data.unsplash_Random_Photo.urls.full}
-                  alt="snowflake"
-                  width="100%"
-                  height="100%"
-                />
-              }
+            {error && <div>Error</div>}
+            {!data && <div>Loading...</div>}
+            {data && data.data.data.unsplash_Random_Photo.urls.full === null && <div>Null response</div>}
+            {
+              data && data.data.data.unsplash_Random_Photo.urls.full &&
+              <Image
+                loader={() => data.data.data.unsplash_Random_Photo.urls.full}
+                src={data.data.data.unsplash_Random_Photo.urls.full}
+                alt="snowflake"
+                width="100%"
+                height="100%"
+              />
+            }
             <div>
-              <button className={styles.button}>Submit</button>
+              <button
+                className={styles.button}
+                onClick={() => {
+                  mutate("/api/snowflake");
+                }}>
+                Submit
+              </button>
             </div>
           </div>
         </div>
