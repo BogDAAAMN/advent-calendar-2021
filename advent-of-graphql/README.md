@@ -6,7 +6,7 @@
 
 **Project:** [`advent-of-graphql/`](./advent-of-graphql/)
 
-**Status:** 07/25 
+**Status:** 10/25 
 
 ## Daily progress
 
@@ -57,3 +57,6 @@ I learnt about graphql custom directives, and the `@rest` directive and the pass
 
 ### Day 09: [Get StepZen going inside your frontend](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=27259fdf5e4c4e40a55b96094a739703)
 - [`e0c4239`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/e0c42391052a969aead94f617d421bad67bc0468) Restructure the StepZen project into [`unsplash-snowflake-stepzen`](/advent-of-graphql/unsplash-snowflake-stepzen)
+
+### Day 10: [Create async function](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=8803a22964e145d58565c346d64c7177)
+- [`0b1ad70a`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/0b1ad70a2221c81d1ed07d8a0ec00e31a574da37) Add async `getData()` function to the Next.js API
