@@ -2,7 +2,21 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
+import useSWR, { mutate } from "swr";
+
+const fetcher = async (url) => {
+  const res = await fetch(url);
+  const data = await res.json();
+  if (res.status !== 200) {
+    throw new Error(data.message);
+  }
+
+  return data;
+};
+
 export default function Home() {
+  const { data, error } = useSWR("/api/snowflake", fetcher);
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -15,12 +29,19 @@ export default function Home() {
         <div className={styles.grid}>
           <div className={styles.card}>
             <h2>Generate a random image of a snowflake &rarr;</h2>
-            <Image
-              src="/placeholder-snowflake.jpg"
-              alt="snowflake"
-              width="100%"
-              height="100%"
-            />
+              {error && <div>Error</div>}
+              {!data && <div>Loading...</div>}
+              {data && data.data.data.unsplash_Random_Photo.urls.full === null && <div>Null response</div>}
+              {
+                data && data.data.data.unsplash_Random_Photo.urls.full &&
+                <Image
+                  loader={() => data.data.data.unsplash_Random_Photo.urls.full}
+                  src={data.data.data.unsplash_Random_Photo.urls.full}
+                  alt="snowflake"
+                  width="100%"
+                  height="100%"
+                />
+              }
             <div>
               <button className={styles.button}>Submit</button>
             </div>
