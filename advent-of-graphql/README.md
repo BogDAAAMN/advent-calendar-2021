@@ -53,7 +53,7 @@ Reference: https://dev.stepzen.com/docs/connecting-backends/manage-configuration
 I learnt about graphql custom directives, and the `@rest` directive and the passing of its headers. Reference: https://stepzen.com/docs/design-a-graphql-schema/custom-graphql-directives
 
 ### Day 08: [Clone the shell of your UI ](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=890688df74c54bb79e25bed2c7c0aac3)
-- [`e0c4239`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/e0c42391052a969aead94f617d421bad67bc0468) Clone the `cerchie/advent-gql-next-ui` UI project into [`unsplash-snowflake-ui`](/unsplash-snowflake-ui)
+- [`e0c4239`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/e0c42391052a969aead94f617d421bad67bc0468) Clone the `cerchie/advent-gql-next-ui` UI project into [`unsplash-snowflake-ui`](/advent-of-graphql/unsplash-snowflake-ui)
 
 ### Day 09: [Get StepZen going inside your frontend](https://descriptive-snout-e43.notion.site/Advent-of-GraphQL-c69086ae98764e2e9e1ccdd8938dc980?p=27259fdf5e4c4e40a55b96094a739703)
-- [`e0c4239`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/e0c42391052a969aead94f617d421bad67bc0468) Restructure the StepZen project into [`unsplash-snowflake-stepzen`](/unsplash-snowflake-stepzen)
+- [`e0c4239`](https://github.com/BogDAAAMN/advent-calendar-2021/commit/e0c42391052a969aead94f617d421bad67bc0468) Restructure the StepZen project into [`unsplash-snowflake-stepzen`](/advent-of-graphql/unsplash-snowflake-stepzen)
