@@ -6,7 +6,7 @@
 
 **Project:** [`advent-of-graphql/`](./advent-of-graphql/)
 
-**Status:** 10/25 
+**Status:** 13/25 
 
 ## Daily progress
 
